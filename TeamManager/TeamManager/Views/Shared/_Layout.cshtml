@@ -28,6 +28,14 @@
                         {
                             <li>@Html.ActionLink("Scouting Event", "Index", "ScoutingEvents")</li>
                         }
+                        else if (User.IsInRole("Coach"))
+                        {
+                            <li>@Html.ActionLink("Team Practice", "Index", "TeamPreactice")</li>
+                            <li>@Html.ActionLink("Tournament", "Index", "Tournament")</li>
+                            <li>@Html.ActionLink("Team Meeting", "Index", "TeamMeeting")</li>
+                            <li>@Html.ActionLink("Team Dinner", "Index", "TeamDinner")</li>
+                            <li>@Html.ActionLink("Payments", "Index", "CoachPayment")</li>
+                        }
                     }
 
                 </ul>
