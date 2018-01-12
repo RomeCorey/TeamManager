@@ -33,5 +33,17 @@ namespace TeamManager.Models
         public System.Data.Entity.DbSet<TeamManager.Models.Player> Players { get; set; }
 
         public System.Data.Entity.DbSet<TeamManager.Models.Coach> Coaches { get; set; }
+
+        public System.Data.Entity.DbSet<TeamManager.Models.TeamPractice> TeamPractices { get; set; }
+
+        public System.Data.Entity.DbSet<TeamManager.Models.Tournament> Tournaments { get; set; }
+
+        public System.Data.Entity.DbSet<TeamManager.Models.TeamMeeting> TeamMeetings { get; set; }
+
+        public System.Data.Entity.DbSet<TeamManager.Models.TeamDinner> TeamDinners { get; set; }
+
+        public System.Data.Entity.DbSet<TeamManager.Models.ScoutingEvent> ScoutingEvents { get; set; }
+
+        public System.Data.Entity.DbSet<TeamManager.Models.CoachPayment> CoachPayments { get; set; }
     }
 }

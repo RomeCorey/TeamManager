@@ -1,0 +1,42 @@
+﻿@model TeamManager.Models.TeamMeeting
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TeamMeeting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.teamMeetingLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teamMeetingLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.teamMeetingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teamMeetingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.teamMeetingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teamMeetingDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.teamMeetingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

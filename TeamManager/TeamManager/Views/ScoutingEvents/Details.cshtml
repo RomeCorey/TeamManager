@@ -1,0 +1,50 @@
+﻿@model TeamManager.Models.ScoutingEvent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ScoutingEvent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.rivalTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rivalTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scoutingField)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoutingField)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scoutingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoutingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scoutingNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoutingNotes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.scoutingEventId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

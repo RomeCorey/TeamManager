@@ -1,0 +1,56 @@
+﻿@model TeamManager.Models.ScoutingEvent
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ScoutingEvent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.rivalTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rivalTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scoutingField)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoutingField)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scoutingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoutingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.scoutingNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoutingNotes)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

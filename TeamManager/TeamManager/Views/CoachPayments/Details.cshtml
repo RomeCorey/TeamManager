@@ -1,0 +1,34 @@
+﻿@model TeamManager.Models.CoachPayment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CoachPayment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.amountProOwes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amountProOwes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.amountD2Owes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amountD2Owes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.coachPaymentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

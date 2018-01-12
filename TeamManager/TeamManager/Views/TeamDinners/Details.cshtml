@@ -1,0 +1,34 @@
+﻿@model TeamManager.Models.TeamDinner
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TeamDinner</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.teamDinnerTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teamDinnerTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.teamDinnerLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.teamDinnerLocation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.teamDinnerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model TeamManager.Models.Tournament
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tournament</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tournamentLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tournamentLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tournamentTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tournamentTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tournamentPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tournamentPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tournamentHotel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tournamentHotel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.tournamentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
