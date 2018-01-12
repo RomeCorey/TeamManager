@@ -10,11 +10,19 @@ namespace TeamManager.Models
     {
         [Key]
         public int teamPracticeId { get; set; }
-        public string practiceLocation { get; set; }
-        public double practicePrice { get; set; }
-        public bool indoor { get; set; }
-        public bool outdoor { get; set; }
+        [Display(Name = "Date")]
+        public string practiceDate { get; set; }
+        [Display(Name = "Practice Time")]
         public string practiceTime { get; set; }
+        [Display(Name = "Practice Location")]
+        public string practiceLocation { get; set; }
+        [Display(Name = "Practice Price")]
+        public double practicePrice { get; set; }
+        [Display(Name = "Indoor")]
+        public string indoor { get; set; }
+        [Display(Name = "Outdoor")]
+        public string outdoor { get; set; }
+        
         // weather API
         // google maps API
     }

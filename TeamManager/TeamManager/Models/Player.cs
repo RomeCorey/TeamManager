@@ -10,8 +10,11 @@ namespace TeamManager.Models
     {
         [Key]
         public int playerId { get; set; }
+        [Display(Name = "Amount Owed")]
         public double amountOwed { get; set; }
+        [Display(Name = "Division")]
         public bool divisionD2 { get; set; }
+        [Display(Name = "Division")]
         public bool pro { get; set; }
 
     }

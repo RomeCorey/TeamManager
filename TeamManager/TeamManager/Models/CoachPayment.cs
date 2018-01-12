@@ -10,7 +10,9 @@ namespace TeamManager.Models
     {
         [Key]
         public int coachPaymentId { get; set; }
+        [Display(Name = "Amount Pro Owes")]
         public double amountProOwes { get; set; }
+        [Display(Name = "Amount D2 Owes")]
         public double amountD2Owes { get; set; }
     }
 }

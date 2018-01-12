@@ -10,10 +10,14 @@ namespace TeamManager.Models
     {
         [Key]
         public int scoutingEventId { get; set; }
+        [Display(Name = "Team to scout")]
         public string rivalTeam { get; set; }
+        [Display(Name = "Field they play on")]
         public string scoutingField { get; set; }
+        [Display(Name = "Time they play")]
         public string scoutingTime { get; set; }
         //picture of the field
+        [Display(Name = "Notes")]
         public string scoutingNotes { get; set; }
 
     }

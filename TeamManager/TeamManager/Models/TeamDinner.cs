@@ -10,7 +10,9 @@ namespace TeamManager.Models
     {
         [Key]
         public int teamDinnerId { get; set; }
+        [Display(Name = "Team Dinner Time")]
         public string teamDinnerTime { get; set; }
+        [Display(Name = "Team Dinner Location")]
         public string teamDinnerLocation { get; set; }
         //YELP API
         //google API

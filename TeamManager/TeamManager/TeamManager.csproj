@@ -226,6 +226,10 @@
     <Compile Include="Migrations\201801121914272_EventsMigration.Designer.cs">
       <DependentUpon>201801121914272_EventsMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801121935247_updateTablesInDatabase.cs" />
+    <Compile Include="Migrations\201801121935247_updateTablesInDatabase.Designer.cs">
+      <DependentUpon>201801121935247_updateTablesInDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Coach.cs" />
@@ -372,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801121914272_EventsMigration.resx">
       <DependentUpon>201801121914272_EventsMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801121935247_updateTablesInDatabase.resx">
+      <DependentUpon>201801121935247_updateTablesInDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
