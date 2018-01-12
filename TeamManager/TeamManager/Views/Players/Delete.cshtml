@@ -1,0 +1,48 @@
+﻿@model TeamManager.Models.Player
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.amountOwed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amountOwed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.divisionD2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.divisionD2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pro)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

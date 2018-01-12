@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TeamManager.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.amountOwed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.divisionD2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pro)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.amountOwed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.divisionD2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pro)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.playerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.playerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.playerId })
+        </td>
+    </tr>
+}
+
+</table>

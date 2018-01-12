@@ -1,0 +1,42 @@
+﻿@model TeamManager.Models.Player
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Player</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.amountOwed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.amountOwed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.divisionD2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.divisionD2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pro)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.playerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
