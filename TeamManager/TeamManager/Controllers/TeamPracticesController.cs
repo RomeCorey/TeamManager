@@ -79,7 +79,7 @@ namespace TeamManager.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "teamPracticeId,practiceLocation,practicePrice,indoor,outdoor,practiceTime")] TeamPractice teamPractice)
+        public ActionResult Edit([Bind(Include = "teamPracticeId,practiceLocation,practicePrice,indoor,outdoor,practiceTime, practiceDate")] TeamPractice teamPractice)
         {
             if (ModelState.IsValid)
             {
