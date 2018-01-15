@@ -10,6 +10,7 @@ using TeamManager.Models;
 
 namespace TeamManager.Controllers
 {
+    [Authorize]
     public class TeamDinnersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
