@@ -31,27 +31,6 @@
                 @Html.ValidationMessageFor(model => model.practicePrice, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.indoor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.indoor)
-                    @Html.ValidationMessageFor(model => model.indoor, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.outdoor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.outdoor)
-                    @Html.ValidationMessageFor(model => model.outdoor, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.practiceTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

@@ -18,10 +18,7 @@ namespace TeamManager.Models
         public string practiceLocation { get; set; }
         [Display(Name = "Practice Price")]
         public double practicePrice { get; set; }
-        [Display(Name = "Indoor")]
-        public string indoor { get; set; }
-        [Display(Name = "Outdoor")]
-        public string outdoor { get; set; }
+        
         
         // weather API
         // google maps API
