@@ -5,6 +5,21 @@
 <div class="jumbotron">
     <h1>Team Manager App</h1>
     <p class="lead">Welcome to the free team manager app from New Boot Solutions!</p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Player"))
+        {
+            <p>This is a player role</p>
+        }
+        else if (User.IsInRole("Coach"))
+        {
+            <p>This is a coach role</p>
+        }
+        else
+        {
+            <p>This is not showing a role</p>
+        }
+    }
 </div>
 
 <div class="row">
