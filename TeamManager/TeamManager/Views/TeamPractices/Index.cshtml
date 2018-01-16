@@ -6,9 +6,16 @@
 
 <h2>Team Practice's</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Coach"))
+    {
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+    }
+}
 <table class="table">
     <tr>
         <th>
