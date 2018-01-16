@@ -77,9 +77,17 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=106.2.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.2.1\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -197,6 +205,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CoachesController.cs" />
+    <Compile Include="Controllers\CoachNotesController.cs" />
     <Compile Include="Controllers\CoachPaymentsController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -241,6 +250,10 @@
     <Compile Include="Migrations\201801152117157_dateTableTeamPractice.cs" />
     <Compile Include="Migrations\201801152117157_dateTableTeamPractice.Designer.cs">
       <DependentUpon>201801152117157_dateTableTeamPractice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801160430552_coachNotes.cs" />
+    <Compile Include="Migrations\201801160430552_coachNotes.Designer.cs">
+      <DependentUpon>201801160430552_coachNotes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -369,6 +382,11 @@
     <Content Include="Views\Events\Details.cshtml" />
     <Content Include="Views\Events\Edit.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\CoachNotes\Create.cshtml" />
+    <Content Include="Views\CoachNotes\Delete.cshtml" />
+    <Content Include="Views\CoachNotes\Details.cshtml" />
+    <Content Include="Views\CoachNotes\Edit.cshtml" />
+    <Content Include="Views\CoachNotes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -407,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801152117157_dateTableTeamPractice.resx">
       <DependentUpon>201801152117157_dateTableTeamPractice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801160430552_coachNotes.resx">
+      <DependentUpon>201801160430552_coachNotes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

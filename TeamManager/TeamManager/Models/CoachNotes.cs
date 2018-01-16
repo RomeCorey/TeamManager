@@ -9,6 +9,7 @@ namespace TeamManager.Models
     public class CoachNotes
     {
         [Key]
+        [Display(Name = "Coach Notes")]
         public string coachNotes { get; set; }
     }
 }

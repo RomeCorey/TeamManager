@@ -47,5 +47,7 @@ namespace TeamManager.Models
         public System.Data.Entity.DbSet<TeamManager.Models.CoachPayment> CoachPayments { get; set; }
 
         public System.Data.Entity.DbSet<TeamManager.Models.Events> Events { get; set; }
+
+        public System.Data.Entity.DbSet<TeamManager.Models.CoachNotes> CoachNotes { get; set; }
     }
 }
