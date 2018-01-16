@@ -24,6 +24,12 @@
         <th>
             @Html.DisplayNameFor(model => model.practiceTime)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.practiceIndoor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.practiceOutdoor)
+        </th>
         <th></th>
     </tr>
 
@@ -40,6 +46,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.practiceTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.practiceIndoor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.practiceOutdoor)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.teamPracticeId }) |
