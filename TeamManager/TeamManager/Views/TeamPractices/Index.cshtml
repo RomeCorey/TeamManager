@@ -69,3 +69,33 @@
 }
 
 </table>
+
+<div id="map">
+
+
+</div>
+
+<script>
+    var model = @Html.Raw(Json.Encode(Model));
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 9,
+          center: uluru
+
+        });
+        for(i = 0;i < model.length; i++)
+        {
+            var latlong = { lat: parseFloat(model[i].lat), lng: parseFloat(model[i].lng)};
+            var marker = new google.maps.Marker({
+                position: latlong,
+                map: map
+            });
+            map.setCenter(latlong);
+        }
+        
+      }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgy517PxiQ5LcN82qIqrkfJxErCOSJ2Gc&callback=initMap">
+</script>

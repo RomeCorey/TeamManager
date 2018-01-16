@@ -7,13 +7,13 @@ namespace TeamManager.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DatabaseUpdate : IMigrationMetadata
+    public sealed partial class updateData : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DatabaseUpdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updateData));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801161918374_DatabaseUpdate"; }
+            get { return "201801161955303_updateData"; }
         }
         
         string IMigrationMetadata.Source
