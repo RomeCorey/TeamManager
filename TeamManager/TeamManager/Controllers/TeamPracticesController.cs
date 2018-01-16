@@ -49,8 +49,13 @@ namespace TeamManager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "teamPracticeId,practiceLocation,practicePrice,indoor,outdoor,practiceTime")] TeamPractice teamPractice)
         {
+            
             if (ModelState.IsValid)
             {
+
+                LatLong latlong = APIController.ApiCall(teamPractice.practiceLocation);
+                teamPractice.lat = latlong.lat;
+                teamPractice.lng = latlong.lng;
                 db.TeamPractices.Add(teamPractice);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -22,6 +22,8 @@ namespace TeamManager.Models
         public string practiceIndoor { get; set; }
         [Display(Name = "Outdoor")]
         public string practiceOutdoor { get; set; }
+        public string lat { get; set; }
+        public string lng { get; set; }
 
 
         // weather API
