@@ -53,7 +53,7 @@ namespace TeamManager.Controllers
             if (ModelState.IsValid)
             {
 
-                LatLong latlong = APIController.ApiCall(teamPractice.practiceLocation);
+                LatLong latlong = APIController.GoogleCall(teamPractice.practiceLocation);
                 teamPractice.lat = latlong.lat;
                 teamPractice.lng = latlong.lng;
                 db.TeamPractices.Add(teamPractice);
