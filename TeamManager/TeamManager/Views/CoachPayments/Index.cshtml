@@ -8,7 +8,6 @@
 
     <h2>Payments</h2>
 
-<<<<<<< HEAD
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
@@ -22,7 +21,6 @@
             </th>
             <th></th>
         </tr>
-=======
 <p>
     @Html.ActionLink("Create New Payment", "Create")
 </p>
@@ -36,7 +34,6 @@
         </th>
         <th></th>
     </tr>
->>>>>>> 22678ae5bf8c08ec2e3bc7b91b8323f4779d476e
 
         @foreach (var item in Model)
         {
@@ -54,20 +51,7 @@
                 </td>
             </tr>
         }
-    </table>
-
-<form action="/Home/Charge" method="POST">
-  <article>
-    <label>Amount: $5.00</label>
-  </article>
-  <script src="//checkout.stripe.com/v2/checkout.js"
-          class="stripe-button"
-          data-key="@Stripe.Value.PublishableKey"
-          data-locale="auto"
-          data-description="Sample Charge"
-          data-amount="500">
-  </script>
-</form>
+</table>
 
 <form action="/CoachPayments/Charge" method="POST">
    <article>
@@ -75,7 +59,7 @@
    </article>
    <script src="//checkout.stripe.com/v2/checkout.js"
           class="stripe-button"
-          data-key="@Stripe.Value.PublishableKey"
+          data-key="pk_test_SaFggqFgMnroET7tNmFFh8XL"
           data-locale="auto"
           data-description="Sample Charge"
           data-amount="500">

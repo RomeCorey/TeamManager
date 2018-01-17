@@ -2,13 +2,15 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
+using Stripe;
 using TeamManager.Models;
 
 [assembly: OwinStartupAttribute(typeof(TeamManager.Startup))]
 namespace TeamManager
 {
     public partial class Startup
-    {
+    {       
+
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
