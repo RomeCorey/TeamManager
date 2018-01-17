@@ -1,38 +1,67 @@
 ﻿@model IEnumerable<TeamManager.Models.CoachPayment>
+@using Microsoft.Extensions.Options
+@inject IOptions<StripeSettings> Stripe
 
-@{
-    ViewBag.Title = "Index";
-}
+    @{
+        ViewBag.Title = "Index";
+    }
 
-<h2>Payments</h2>
+    <h2>Payments</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.amountProOwes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.amountD2Owes)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.amountProOwes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amountD2Owes)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.amountProOwes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.amountD2Owes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.coachPaymentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.coachPaymentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.coachPaymentId })
-        </td>
-    </tr>
-}
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amountProOwes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amountD2Owes)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.coachPaymentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.coachPaymentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.coachPaymentId })
+                </td>
+            </tr>
+        }
+    </table>
+
+<form action="/Home/Charge" method="POST">
+  <article>
+    <label>Amount: $5.00</label>
+  </article>
+  <script src="//checkout.stripe.com/v2/checkout.js"
+          class="stripe-button"
+          data-key="@Stripe.Value.PublishableKey"
+          data-locale="auto"
+          data-description="Sample Charge"
+          data-amount="500">
+  </script>
+</form>
+
+<form action="/CoachPayments/Charge" method="POST">
+   <article>
+      <label>Amount: $5.00</label>
+   </article>
+   <script src="//checkout.stripe.com/v2/checkout.js"
+          class="stripe-button"
+          data-key="@Stripe.Value.PublishableKey"
+          data-locale="auto"
+          data-description="Sample Charge"
+          data-amount="500">
+   </script>
+</form>

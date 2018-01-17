@@ -279,6 +279,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\ScoutingEvent.cs" />
+    <Compile Include="Models\StripeSettings.cs" />
     <Compile Include="Models\TeamDinner.cs" />
     <Compile Include="Models\TeamMeeting.cs" />
     <Compile Include="Models\TeamPractice.cs" />
@@ -483,6 +484,7 @@
     <Content Include="Views\CoachNotes\Details.cshtml" />
     <Content Include="Views\CoachNotes\Edit.cshtml" />
     <Content Include="Views\CoachNotes\Index.cshtml" />
+    <Content Include="Views\CoachPayments\Charge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
