@@ -8,6 +8,7 @@
 
     <h2>Payments</h2>
 
+<<<<<<< HEAD
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
@@ -21,6 +22,21 @@
             </th>
             <th></th>
         </tr>
+=======
+<p>
+    @Html.ActionLink("Create New Payment", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.amountProOwes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.amountD2Owes)
+        </th>
+        <th></th>
+    </tr>
+>>>>>>> 22678ae5bf8c08ec2e3bc7b91b8323f4779d476e
 
         @foreach (var item in Model)
         {

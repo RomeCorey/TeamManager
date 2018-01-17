@@ -12,7 +12,7 @@
     if (User.IsInRole("Coach"))
     {
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New Team Practice", "Create")
         </p>
     }
 }
@@ -61,9 +61,22 @@
             @Html.DisplayFor(modelItem => item.practiceOutdoor)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.teamPracticeId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.teamPracticeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.teamPracticeId })
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Player"))
+                {
+                    @Html.ActionLink("Details", "Details", new { id = item.teamPracticeId })
+                }
+                else if (User.IsInRole("Coach"))
+                {
+                    @Html.ActionLink("Edit | ", "Edit", new { id = item.teamPracticeId }) 
+                    @Html.ActionLink("Details | ", "Details", new { id = item.teamPracticeId }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.teamPracticeId })
+
+                }
+            }
+
         </td>
     </tr>
 }

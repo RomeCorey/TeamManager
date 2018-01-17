@@ -11,7 +11,7 @@
     if (User.IsInRole("Coach"))
     {
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New Team Meeting", "Create")
         </p>
     }
 }
@@ -41,9 +41,22 @@
             @Html.DisplayFor(modelItem => item.teamMeetingDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.teamMeetingId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.teamMeetingId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.teamMeetingId })
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Player"))
+                {
+                    @Html.ActionLink("Details", "Details", new { id = item.teamMeetingId })
+                }
+                else if (User.IsInRole("Coach"))
+                {
+                    @Html.ActionLink("Edit |", "Edit", new { id = item.teamMeetingId })
+                    @Html.ActionLink(" Details | ", "Details", new { id = item.teamMeetingId })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.teamMeetingId })
+
+                }
+            }
+
         </td>
     </tr>
 }

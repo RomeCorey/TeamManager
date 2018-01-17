@@ -11,7 +11,7 @@
     if (User.IsInRole("Coach"))
     {
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New Tournament", "Create")
         </p>
     }
 }
@@ -47,9 +47,20 @@
             @Html.DisplayFor(modelItem => item.tournamentHotel)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.tournamentId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.tournamentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.tournamentId })
+            @if (User.Identity.IsAuthenticated)
+            {
+                if (User.IsInRole("Player"))
+                {
+                    @Html.ActionLink("Details", "Details", new { id = item.tournamentId }) 
+                }
+                else if (User.IsInRole("Coach"))
+                {
+                    @Html.ActionLink("Edit | ", "Edit", new { id = item.tournamentId }) 
+                    @Html.ActionLink("Details | ", "Details", new { id = item.tournamentId }) 
+                    @Html.ActionLink("Delete", "Delete", new { id = item.tournamentId })
+
+            }
+            }
         </td>
     </tr>
 }
