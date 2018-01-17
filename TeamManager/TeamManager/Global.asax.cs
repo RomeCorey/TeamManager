@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Stripe;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,7 +12,7 @@ namespace TeamManager
 {
     public class MvcApplication : System.Web.HttpApplication
     {
-        protected void Application_Start()
+        protected void Application_Start(object sender, EventArgs e)
         {
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
