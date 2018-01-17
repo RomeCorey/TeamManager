@@ -20,7 +20,10 @@ namespace TeamManager.Models
         public double tournamentPrice { get; set; }
         [Display(Name = "Hotel Info")]
         public string tournamentHotel { get; set; }
+
+        public string lat { get; set; }
+        public string lng { get; set; }
         //weather API
-        //google maps API
+        
     }
 }
