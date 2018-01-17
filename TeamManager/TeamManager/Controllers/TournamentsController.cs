@@ -51,6 +51,9 @@ namespace TeamManager.Controllers
         {
             if (ModelState.IsValid)
             {
+                LatLong latlong = APIController.GoogleCall(tournament.tournamentLocation);
+                tournament.lat = latlong.lat;
+                tournament.lng = latlong.lng;
                 db.Tournaments.Add(tournament);
                 db.SaveChanges();
                 return RedirectToAction("Index");
