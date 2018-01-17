@@ -12,7 +12,7 @@
     if (User.IsInRole("Coach"))
     {
         <p>
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New Team Practice", "Create")
         </p>
     }
 }
@@ -70,8 +70,8 @@
                 }
                 else if (User.IsInRole("Coach"))
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.teamPracticeId }) 
-                    @Html.ActionLink("Details", "Details", new { id = item.teamPracticeId }) 
+                    @Html.ActionLink("Edit | ", "Edit", new { id = item.teamPracticeId }) 
+                    @Html.ActionLink("Details | ", "Details", new { id = item.teamPracticeId }) 
                     @Html.ActionLink("Delete", "Delete", new { id = item.teamPracticeId })
 
                 }
