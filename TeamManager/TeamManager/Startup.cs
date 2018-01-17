@@ -3,14 +3,16 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin;
 using Owin;
 using Stripe;
+using System.Web.Hosting;
+using System.Web.Services.Description;
 using TeamManager.Models;
+using System.Collections.Generic;
 
 [assembly: OwinStartupAttribute(typeof(TeamManager.Startup))]
 namespace TeamManager
 {
     public partial class Startup
-    {       
-
+    {
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
