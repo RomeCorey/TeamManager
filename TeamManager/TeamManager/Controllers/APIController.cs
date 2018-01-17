@@ -12,7 +12,7 @@ namespace TeamManager.Controllers
     static class APIController 
     {
         // GET: API
-        public static LatLong ApiCall(string address)
+        public static LatLong GoogleCall(string address)
         {
             var split = address.Split(' ');
             var joinAddress = String.Join("+",split);
