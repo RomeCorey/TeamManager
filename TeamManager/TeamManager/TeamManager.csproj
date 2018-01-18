@@ -85,6 +85,22 @@
       <HintPath>..\packages\RestSharp.106.2.1\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ServiceStack.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Client.5.0.2\lib\net45\ServiceStack.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.0.2\lib\net45\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.5.0.2\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stripe, Version=1.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.1.12.0\lib\net40\Stripe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Stripe.net, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Stripe.net.12.0.0\lib\net45\Stripe.net.dll</HintPath>
       <Private>True</Private>

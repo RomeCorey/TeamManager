@@ -1,27 +1,14 @@
 ﻿@model IEnumerable<TeamManager.Models.CoachPayment>
-@using Microsoft.Extensions.Options
-@inject IOptions<StripeSettings> Stripe
+@*@using Microsoft.Extensions.Options
+@inject IOptions<StripeSettings> Stripe*@
 
-    @{
-        ViewBag.Title = "Index";
-    }
+@{
+    ViewBag.Title = "Index";
+}
 
-    <h2>Payments</h2>
+<h2>Payments</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.amountProOwes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.amountD2Owes)
-            </th>
-            <th></th>
-        </tr>
-<p>
+    
     @Html.ActionLink("Create New Payment", "Create")
 </p>
 <table class="table">
@@ -53,15 +40,29 @@
         }
 </table>
 
-<form action="/CoachPayments/Charge" method="POST">
+@*<form action="/CoachPayments/Charge" method="POST">
    <article>
       <label>Amount: $5.00</label>
    </article>
-   <script src="//checkout.stripe.com/v2/checkout.js"
+   <script src="//checkout.stripe.com/checkout.js"
           class="stripe-button"
           data-key="pk_test_SaFggqFgMnroET7tNmFFh8XL"
           data-locale="auto"
           data-description="Sample Charge"
-          data-amount="500">
+          data-amount="1000">
    </script>
-</form>
+</form>*@
+
+        <form action="/CoachPayments/Charge" method="POST">
+            <article>
+                <label>Amount: $25.00</label>
+            </article>
+            <script src="//checkout.stripe.com/checkout.js"
+                    class="stripe-button"
+                    data-key="pk_test_SaFggqFgMnroET7tNmFFh8XL"                
+                    data-locale="auto"
+                    data-description="Sample Charge"
+                    data-currency="usd"
+                    data-amount="2500">
+            </script>
+        </form>

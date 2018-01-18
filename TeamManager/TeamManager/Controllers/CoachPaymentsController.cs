@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Configuration;
 using System.Web.Mvc;
 using TeamManager.Models;
+using RestSharp;
+
 
 namespace TeamManager.Controllers
 {
@@ -128,26 +130,21 @@ namespace TeamManager.Controllers
         }
 
         //Stripe API Things
+        [HttpPost]
         public ActionResult Charge(string stripeEmail, string stripeToken)
         {
-            var customers = new StripeCustomerService();
-            var charges = new StripeChargeService();
+            //var apiKey = "pk_test_SaFggqFgMnroET7tNmFFh8XL";
+            //var stripeClient = new StripeClient(apiKey);
 
-            var customer = customers.Create(new StripeCustomerCreateOptions
-            {
-                Email = stripeEmail,
-                SourceToken = stripeToken
-            });
+            //dynamic response = stripeClient.CreateChargeWithToken(2500, stripeToken, "usd", stripeEmail);
 
-            var charge = charges.Create(new StripeChargeCreateOptions
-            {
-                Amount = 500,
-                Description = "Sample Charge",
-                Currency = "usd",
-                CustomerId = customer.Id
-            });
+            //if (response.IsError == false && response.Paid)
+            //{
+            //    // success message here
+            //}
 
             return View();
+
         }
 
         public ActionResult Error()
