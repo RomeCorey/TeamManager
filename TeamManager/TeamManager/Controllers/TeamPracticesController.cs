@@ -129,5 +129,25 @@ namespace TeamManager.Controllers
             }
             base.Dispose(disposing);
         }
+
+        //public ActionResult Weather(int id)
+        //{
+        //    WeatherViewModel model = new WeatherViewModel();
+        //    TeamPractice practice = (from x in db.TeamPractices where x.teamPracticeId == id select x).FirstOrDefault();
+        //    WeatherData data = APIController.GetWeather(practice.lat, practice.lng);
+            
+
+        //    foreach (var thing in data.List)
+        //    {
+
+        //        //parse
+        //        if(thing.Dt == practice.practiceDate)
+        //        {
+        //            model.Main = thing.Main;
+        //            model.Rain = thing.Rain;
+        //        }
+        //    }
+        //    return View(model);
+        //}
     }
 }
