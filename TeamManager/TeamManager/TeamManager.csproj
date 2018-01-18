@@ -308,6 +308,8 @@
     <Compile Include="Models\TeamMeeting.cs" />
     <Compile Include="Models\TeamPractice.cs" />
     <Compile Include="Models\Tournament.cs" />
+    <Compile Include="Models\WeatherAPI.cs" />
+    <Compile Include="Models\WeatherViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -511,6 +513,7 @@
     <Content Include="Views\CoachNotes\Details.cshtml" />
     <Content Include="Views\CoachNotes\Edit.cshtml" />
     <Content Include="Views\CoachNotes\Index.cshtml" />
+    <Content Include="Views\TeamPractices\Weather.cshtml" />
     <Content Include="Views\CoachPayments\Charge.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -536,6 +539,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801121712321_updateForDatabase.resx">
       <DependentUpon>201801121712321_updateForDatabase.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801121914272_EventsMigration.resx">
       <DependentUpon>201801121914272_EventsMigration.cs</DependentUpon>

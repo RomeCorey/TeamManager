@@ -60,6 +60,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.practiceOutdoor)
         </td>
+        @*<td>
+            @Html.ActionLink("Weather", "Weather", new { id = item.teamPracticeId })
+        </td>*@
+
         <td>
 
             @if (User.Identity.IsAuthenticated)

@@ -30,5 +30,22 @@ namespace TeamManager.Controllers
             latlong.lng = longitude;
             return latlong;
         }
+        public static WeatherData GetWeather(string lat, string lng)
+        {
+            WeatherData weatherData;
+            var client = new RestClient("http://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lng+"&APPID=23609b6ae9c38a0f8512e50b042a555d");
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("Postman-Token", "dd1c125e-c38b-15fe-ff54-66c2b23a5dbb");
+            request.AddHeader("Cache-Control", "no-cache");
+            IRestResponse response = client.Execute(request);
+            weatherData = WeatherData.FromJson(response.Content);
+            return weatherData;
+        }
+
+
+
+
     }
+
+
 }

@@ -62,6 +62,22 @@ namespace TeamManager
 
             }
 
+            if (!roleManager.RoleExists("D2Player"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "D2Player";
+                roleManager.Create(role);
+
+            }
+
+            if (!roleManager.RoleExists("ProPlayer"))
+            {
+                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
+                role.Name = "ProPlayer";
+                roleManager.Create(role);
+
+            }
+
             // creating Creating Coach role    
             if (!roleManager.RoleExists("Coach"))
             {
