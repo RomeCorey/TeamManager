@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Stripe;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using TeamManager.Models;
+using RestSharp;
+
 
 namespace TeamManager.Controllers
 {
@@ -123,6 +127,29 @@ namespace TeamManager.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        //Stripe API Things
+        [HttpPost]
+        public ActionResult Charge(string stripeEmail, string stripeToken)
+        {
+            //var apiKey = "pk_test_SaFggqFgMnroET7tNmFFh8XL";
+            //var stripeClient = new StripeClient(apiKey);
+
+            //dynamic response = stripeClient.CreateChargeWithToken(2500, stripeToken, "usd", stripeEmail);
+
+            //if (response.IsError == false && response.Paid)
+            //{
+            //    // success message here
+            //}
+
+            return View();
+
+        }
+
+        public ActionResult Error()
+        {
+            return View();
         }
     }
 }

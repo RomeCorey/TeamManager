@@ -77,12 +77,37 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RestSharp, Version=106.2.1.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.2.1\lib\net452\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ServiceStack.Client, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Client.5.0.2\lib\net45\ServiceStack.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.0.2\lib\net45\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.5.0.2\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stripe, Version=1.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.1.12.0\lib\net40\Stripe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stripe.net, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.12.0.0\lib\net45\Stripe.net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
@@ -148,9 +173,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -213,6 +235,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\ScoutingEventsController.cs" />
+    <Compile Include="Controllers\StripeAPIController.cs" />
     <Compile Include="Controllers\TeamDinnersController.cs" />
     <Compile Include="Controllers\TeamMeetingsController.cs" />
     <Compile Include="Controllers\TeamPracticesController.cs" />
@@ -256,17 +279,13 @@
     <Compile Include="Migrations\201801160430552_coachNotes.Designer.cs">
       <DependentUpon>201801160430552_coachNotes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801162008262_updatePlayerButtons.cs" />
-    <Compile Include="Migrations\201801162008262_updatePlayerButtons.Designer.cs">
-      <DependentUpon>201801162008262_updatePlayerButtons.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201801162133091_latLongAddToPractice.cs" />
     <Compile Include="Migrations\201801162133091_latLongAddToPractice.Designer.cs">
       <DependentUpon>201801162133091_latLongAddToPractice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801171424497_apiTournament.cs" />
-    <Compile Include="Migrations\201801171424497_apiTournament.Designer.cs">
-      <DependentUpon>201801171424497_apiTournament.cs</DependentUpon>
+    <Compile Include="Migrations\201801171728006_UpdateDatabase.cs" />
+    <Compile Include="Migrations\201801171728006_UpdateDatabase.Designer.cs">
+      <DependentUpon>201801171728006_UpdateDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201801171750587_coachIdKey.cs" />
     <Compile Include="Migrations\201801171750587_coachIdKey.Designer.cs">
@@ -284,6 +303,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\ScoutingEvent.cs" />
+    <Compile Include="Models\StripeSettings.cs" />
     <Compile Include="Models\TeamDinner.cs" />
     <Compile Include="Models\TeamMeeting.cs" />
     <Compile Include="Models\TeamPractice.cs" />
@@ -388,6 +408,7 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\_bootstrap-datetimepicker.less" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="appsettings.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\collapse.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -413,7 +434,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -491,6 +514,7 @@
     <Content Include="Views\CoachNotes\Edit.cshtml" />
     <Content Include="Views\CoachNotes\Index.cshtml" />
     <Content Include="Views\TeamPractices\Weather.cshtml" />
+    <Content Include="Views\CoachPayments\Charge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -534,14 +558,11 @@
     <EmbeddedResource Include="Migrations\201801160430552_coachNotes.resx">
       <DependentUpon>201801160430552_coachNotes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801162008262_updatePlayerButtons.resx">
-      <DependentUpon>201801162008262_updatePlayerButtons.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801162133091_latLongAddToPractice.resx">
       <DependentUpon>201801162133091_latLongAddToPractice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801171424497_apiTournament.resx">
-      <DependentUpon>201801171424497_apiTournament.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801171728006_UpdateDatabase.resx">
+      <DependentUpon>201801171728006_UpdateDatabase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801171750587_coachIdKey.resx">
       <DependentUpon>201801171750587_coachIdKey.cs</DependentUpon>
